@@ -1,10 +1,12 @@
-FROM node:latest
+FROM node:alpine
 
 WORKDIR /app
 
-ADD . .
+ADD package*.json ./
 
 RUN npm install
+
+ADD . .
 
 ENTRYPOINT [ "npm" ]
 
